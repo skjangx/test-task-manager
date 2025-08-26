@@ -10,7 +10,7 @@ export function useTasks() {
   useEffect(() => {
     const storedTasks = localStorage.getItem('tasks');
     if (storedTasks) {
-      const parsedTasks = JSON.parse(storedTasks).map((task: any) => ({
+      const parsedTasks = JSON.parse(storedTasks).map((task: Task & { createdAt: string; updatedAt: string; dueDate?: string }) => ({
         ...task,
         createdAt: new Date(task.createdAt),
         updatedAt: new Date(task.updatedAt),

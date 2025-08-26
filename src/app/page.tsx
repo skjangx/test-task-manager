@@ -18,7 +18,6 @@ export default function Home() {
     addTask, 
     updateTask, 
     deleteTask, 
-    getTasksByStatus, 
     getTaskStats 
   } = useTasks();
 
