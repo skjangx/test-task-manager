@@ -22,18 +22,21 @@ interface SidebarProps {
 }
 
 export function Sidebar({ activeView, onViewChange, stats }: SidebarProps) {
+  // Calculate today's tasks count (this would need to be passed from parent in real implementation)
+  const todayCount = 0; // Placeholder - would need tasks data to calculate
+
   const menuItems = [
+    {
+      id: 'today',
+      label: 'Today',
+      icon: Calendar,
+      count: todayCount,
+    },
     {
       id: 'all',
       label: 'All Tasks',
       icon: BarChart3,
       count: stats.total,
-    },
-    {
-      id: 'today',
-      label: 'Today',
-      icon: Calendar,
-      count: 0, // Could be implemented to show today's tasks
     },
     {
       id: 'todo',
